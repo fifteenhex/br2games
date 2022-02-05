@@ -1,0 +1,6 @@
+config BR2_PACKAGE_SCUMMVM
+	bool "scummvm"
+	depends on BR2_TOOLCHAIN_BUILDROOT_CXX
+	select BR2_PACKAGE_SDL
+	help
+	  I likes me some monkey island

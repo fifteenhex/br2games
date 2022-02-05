@@ -1,0 +1,1 @@
+source "$BR2_EXTERNAL_GAMES_PATH/package/scummvm/Config.in"
