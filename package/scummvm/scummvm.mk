@@ -7,8 +7,13 @@
 SCUMMVM_VERSION = v2.5.1
 SCUMMVM_SOURCE = $(SCUMMVM_VERSION).tar.gz
 SCUMMVM_SITE = https://github.com/scummvm/scummvm/archive/refs/tags
-SCUMMVM_DEPENDENCIES = sdl
 SCUMMVM_LICENSE = GPL-3.0
+
+ifeq ($(BR2_PACKAGE_SDL2),y)
+SCUMMVM_DEPENDENCIES = sdl2
+else
+SCUMMVM_DEPENDENCIES = sdl
+endif
 
 define SCUMMVM_CONFIGURE_CMDS
 	cd $(@D) && PATH=$(HOST_DIR)/bin:$(PATH)			\
