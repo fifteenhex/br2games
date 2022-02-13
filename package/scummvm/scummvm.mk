@@ -4,9 +4,9 @@
 #
 ################################################################################
 
-SCUMMVM_VERSION = v2.5.1
-SCUMMVM_SOURCE = $(SCUMMVM_VERSION).tar.gz
-SCUMMVM_SITE = https://github.com/scummvm/scummvm/archive/refs/tags
+SCUMMVM_VERSION = 0541275c2761b450b2fc8c5ffbc6911b26f91394
+SCUMMVM_SITE = git@github.com:fifteenhex/scummvm.git
+SCUMMVM_SITE_METHOD = git
 SCUMMVM_LICENSE = GPL-3.0
 
 ifeq ($(BR2_PACKAGE_SDL2),y)
@@ -31,7 +31,7 @@ define SCUMMVM_CONFIGURE_CMDS
 		--disable-nuked-opl					\
 		--no-builtin-resources					\
 		--enable-release					\
-		--enable-engine=scumm
+		--enable-engine-static=scumm
 endef
 
 define SCUMMVM_BUILD_CMDS
