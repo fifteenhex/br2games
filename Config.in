@@ -1,3 +1,4 @@
+source "$BR2_EXTERNAL_GAMES_PATH/package/hatari/Config.in"
 source "$BR2_EXTERNAL_GAMES_PATH/package/mednafen/Config.in"
 source "$BR2_EXTERNAL_GAMES_PATH/package/mgba/Config.in"
 source "$BR2_EXTERNAL_GAMES_PATH/package/scummvm/Config.in"
