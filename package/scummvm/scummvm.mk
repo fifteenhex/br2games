@@ -15,6 +15,12 @@ else
 SCUMMVM_DEPENDENCIES = sdl
 endif
 
+SCUMMVM_STATIC_ENGINES := scumm
+
+ifeq ($(BR2_PACKAGE_SCUMMVM_ENGINE_SCUMMV7V8),y)
+SCUMMVM_ENGINES := scumm-7-8
+endif
+
 define SCUMMVM_CONFIGURE_CMDS
 	cd $(@D) && PATH=$(HOST_DIR)/bin:$(PATH)			\
 		PKG_CONFIG_LIBDIR=$(TARGET_DIR)/usr/lib/pkgconfig/	\
@@ -27,11 +33,12 @@ define SCUMMVM_CONFIGURE_CMDS
 		--disable-lua						\
 		--disable-debug						\
 		--disable-mt32emu					\
-		--disable-all-engines					\
 		--disable-nuked-opl					\
 		--no-builtin-resources					\
+		--disable-all-engines					\
 		--enable-release					\
-		--enable-engine-static=scumm
+		--enable-engine-static=$(SCUMMVM_STATIC_ENGINES)	\
+		--enable-engine=$(SCUMMVM_ENGINES)
 endef
 
 define SCUMMVM_BUILD_CMDS

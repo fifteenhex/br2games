@@ -4,3 +4,9 @@ config BR2_PACKAGE_SCUMMVM
 	depends on BR2_PACKAGE_SDL || BR2_PACKAGE_SDL2
 	help
 	  I likes me some monkey island
+
+config BR2_PACKAGE_SCUMMVM_ENGINE_SCUMMV7V8
+	bool "scummvm v7/v8 suppport"
+	depends on BR2_PACKAGE_SCUMMVM
+	help
+	  Support for newer scumm games like Full Throttle.
