@@ -1,0 +1,4 @@
+config BR2_PACKAGE_VICE
+	bool "vice"
+	help
+	  vice
