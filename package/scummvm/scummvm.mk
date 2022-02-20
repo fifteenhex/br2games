@@ -9,6 +9,17 @@ SCUMMVM_SITE = git@github.com:fifteenhex/scummvm.git
 SCUMMVM_SITE_METHOD = git
 SCUMMVM_LICENSE = GPL-3.0
 
+# ignore the -Os option, this is performance critical
+SCUMMVM_CFLAGS = $(TARGET_CFLAGS) -O3
+
+ifeq ($(BR2_GCC_ENABLE_LTO),y)
+SCUMMVM_CFLAGS += -flto
+endif
+
+ifeq ($(BR2_ARM_CPU_HAS_NEON),y)
+SCUMMVM_CFLAGS += -mfpu=neon
+endif
+
 ifeq ($(BR2_PACKAGE_SDL2),y)
 SCUMMVM_DEPENDENCIES = sdl2
 else
@@ -22,7 +33,7 @@ SCUMMVM_ENGINES := scumm-7-8
 endif
 
 define SCUMMVM_CONFIGURE_CMDS
-	cd $(@D) && PATH=$(HOST_DIR)/bin:$(PATH)			\
+	cd $(@D) && CPPFLAGS="$(SCUMMVM_CFLAGS)" CFLAGS="$(SCUMMVM_CFLAGS)" PATH=$(HOST_DIR)/bin:$(PATH) \
 		PKG_CONFIG_LIBDIR=$(TARGET_DIR)/usr/lib/pkgconfig/	\
 		./configure						\
 		--with-sdl-prefix=$(STAGING_DIR)/usr/bin/		\
@@ -52,4 +63,3 @@ define SCUMMVM_INSTALL_TARGET_CMDS
 endef
 
 $(eval $(generic-package))
-
