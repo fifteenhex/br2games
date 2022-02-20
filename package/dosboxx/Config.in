@@ -1,0 +1,4 @@
+config BR2_PACKAGE_DOSBOXX
+	bool "dosbox-x"
+	help
+	  dosbox-x
