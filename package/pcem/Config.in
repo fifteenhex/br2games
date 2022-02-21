@@ -1,0 +1,7 @@
+config BR2_PACKAGE_PCEM
+	bool "pcem"
+	depends on BR2_PACKAGE_SDL2
+	select BR2_PACKAGE_HOST_CMAKE
+	select BR2_PACKAGE_OPENAL
+	help
+	  PCEM
