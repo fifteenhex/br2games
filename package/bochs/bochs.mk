@@ -18,7 +18,7 @@ define BOCHS_CONFIGURE_CMDS
 		PATH=$(HOST_DIR)/bin:$(STAGING_DIR)/usr/bin:$(PATH)	\
 		PKG_CONFIG_LIBDIR=$(TARGET_DIR)/usr/lib/pkgconfig/	\
 		./configure						\
-		--prefix=$(TARGET_DIR)/usr/				\
+		--prefix=/usr/						\
 		--host=arm-buildroot-linux-gnueabihf			\
 		$(BOCHS_CONF_OPTS)
 endef
@@ -28,7 +28,7 @@ define BOCHS_BUILD_CMDS
 endef
 
 define BOCHS_INSTALL_TARGET_CMDS
-	PATH=$(HOST_DIR)/bin:$(PATH) make -C $(@D) install
+	PATH=$(HOST_DIR)/bin:$(PATH) make -C $(@D) install DESTDIR=$(TARGET_DIR)
 endef
 
 $(eval $(generic-package))
