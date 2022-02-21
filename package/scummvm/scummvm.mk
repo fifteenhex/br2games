@@ -37,7 +37,7 @@ define SCUMMVM_CONFIGURE_CMDS
 		PKG_CONFIG_LIBDIR=$(TARGET_DIR)/usr/lib/pkgconfig/	\
 		./configure						\
 		--with-sdl-prefix=$(STAGING_DIR)/usr/bin/		\
-		--prefix=$(TARGET_DIR)/usr/				\
+		--prefix=/usr/						\
 		--backend=sdl						\
 		--host=arm-buildroot-linux-gnueabihf			\
 		--disable-cloud						\
@@ -57,7 +57,7 @@ define SCUMMVM_BUILD_CMDS
 endef
 
 define SCUMMVM_INSTALL_TARGET_CMDS
-	PATH=$(HOST_DIR)/bin:$(PATH) make -C $(@D) install
+	PATH=$(HOST_DIR)/bin:$(PATH) make -C $(@D) install DESTDIR=$(TARGET_DIR)
 	rm -r $(TARGET_DIR)/usr/share/doc/scummvm
 
 endef
