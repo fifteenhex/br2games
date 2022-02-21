@@ -1,0 +1,4 @@
+config BR2_PACKAGE_BOCHS
+	bool "bochs"
+	help
+	  bochs
