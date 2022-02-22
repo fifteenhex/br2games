@@ -1,0 +1,4 @@
+config BR2_PACKAGE_LIBFMT
+	bool "libfmt"
+	help
+	  A modern formatting library
