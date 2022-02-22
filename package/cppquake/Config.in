@@ -1,0 +1,7 @@
+config BR2_PACKAGE_CPPQUAKE
+	bool "cppquake"
+	depends on BR2_PACKAGE_SDL2
+	select BR2_PACKAGE_LIBFMT
+	select BR2_PACKAGE_GLM
+	help
+	  Modernised fork of SDLQuake

@@ -1,0 +1,15 @@
+Index: cppquake-201b54f9360de04a29fa001f655aaf9dcb16d106/CMakeLists.txt
+===================================================================
+--- cppquake-201b54f9360de04a29fa001f655aaf9dcb16d106.orig/CMakeLists.txt
++++ cppquake-201b54f9360de04a29fa001f655aaf9dcb16d106/CMakeLists.txt
+@@ -119,7 +119,5 @@ target_link_libraries(sdlquake
+         fmt::fmt
+         SDL2::SDL2
+         )
+-set_target_properties(sdlquake PROPERTIES
+-        RUNTIME_OUTPUT_DIRECTORY_DEBUG ~/quake
+-        RUNTIME_OUTPUT_DIRECTORY_RELEASE ~/quake
+-        )
+\ No newline at end of file
++
++install(TARGETS sdlquake)

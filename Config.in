@@ -1,4 +1,5 @@
 source "$BR2_EXTERNAL_GAMES_PATH/package/bochs/Config.in"
+source "$BR2_EXTERNAL_GAMES_PATH/package/cppquake/Config.in"
 source "$BR2_EXTERNAL_GAMES_PATH/package/dosboxx/Config.in"
 source "$BR2_EXTERNAL_GAMES_PATH/package/fake08/Config.in"
 source "$BR2_EXTERNAL_GAMES_PATH/package/hatari/Config.in"
