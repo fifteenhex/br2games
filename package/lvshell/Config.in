@@ -1,0 +1,5 @@
+config BR2_PACKAGE_LVSHELL
+	bool "lvshell"
+	depends on BR2_PACKAGE_SDL2
+	help
+	  LVGL based shell to start apps.
