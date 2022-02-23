@@ -4,10 +4,10 @@
 #
 ################################################################################
 
-LVSHELL_VERSION = da054becc9c1e32be3865ea9c0e63ebd9e0b7769
+LVSHELL_VERSION = c631566a7ce6d0571a1ce46b09d8a6d99b4d950a
 LVSHELL_SITE = https://github.com/fifteenhex/lvshell.git
 LVSHELL_SITE_METHOD = git
-LVSHELL_DEPENDS = sdl2
+LVSHELL_DEPENDENCIES = sdl2
 LVSHELL_LICENSE = GPL-3.0
 LVSHELL_GIT_SUBMODULES = YES
 

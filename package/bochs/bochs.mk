@@ -8,7 +8,7 @@ BOCHS_VERSION = 2.7
 BOCHS_SITE = http://downloads.sourceforge.net/sourceforge/bochs/$(BOCHS_VERSION)
 BOCHS_SOURCE = bochs-$(BOCHS_VERSION).tar.gz
 BOCHS_LICENSE = lgpl-2.1
-BOCHS_DEPENDS = sdl2
+BOCHS_DEPENDENCIES = sdl2
 #BOCHS_AUTORECONF = YES
 BOCHS_CONF_OPTS = --without-x11 --with-sdl2
 
