@@ -4,9 +4,10 @@
 #
 ################################################################################
 
-FAKE08_VERSION = af8d2303d6d623f0859f3063e533a8db275e705d
+FAKE08_VERSION = 49f4eb1bd465639d36ef6657e038da892399c7d9
 FAKE08_SITE = https://github.com/jtothebell/fake-08.git
 FAKE08_SITE_METHOD = git
+FAKE08_GIT_SUBMODULES = YES
 FAKE08_DEPENDENCIES = sdl2
 FAKE08_LICENSE = MIT
 
