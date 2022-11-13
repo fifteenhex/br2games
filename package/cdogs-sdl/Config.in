@@ -1,0 +1,7 @@
+config BR2_PACKAGE_CDOGSSDL
+	bool "cdogssdl"
+	depends on BR2_PACKAGE_SDL2
+	depends on BR2_PACKAGE_SDL2_IMAGE
+	depends on BR2_PACKAGE_SDL2_MIXER
+	help
+	  cdogs-sdl
