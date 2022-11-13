@@ -15,10 +15,13 @@ define FAKE08_CONFIGURE_CMDS
 endef
 
 define FAKE08_BUILD_CMDS
-	make -C $(@D) sdl2
+	make -C $(@D) CXX=$(TARGET_CXX) sdl2
 endef
 
 define FAKE08_INSTALL_TARGET_CMDS
+	$(INSTALL) -d -m 0755 $(TARGET_DIR)/usr/share/pico-8/
+	$(INSTALL) -m 0644 $(@D)/carts/*.p8 $(TARGET_DIR)/usr/share/pico-8/
+	$(INSTALL) -D -m 0755 $(@D)/platform/SDL2Desktop/FAKE08 $(TARGET_DIR)/usr/games/
 endef
 
 $(eval $(generic-package))

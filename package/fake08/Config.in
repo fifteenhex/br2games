@@ -1,5 +1,6 @@
 config BR2_PACKAGE_FAKE08
 	bool "fake-08"
 	depends on BR2_PACKAGE_SDL2
+	depends on BR2_INSTALL_LIBSTDCPP
 	help
 	  fake-08
