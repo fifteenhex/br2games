@@ -1,0 +1,4 @@
+config BR2_PACKAGE_HOST_XA
+	bool "host xa"
+	help
+	  xa 6502 assembler

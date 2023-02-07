@@ -2,5 +2,7 @@ config BR2_PACKAGE_VICE
 	bool "vice"
 	depends on BR2_TOOLCHAIN_BUILDROOT_CXX
 	depends on BR2_PACKAGE_SDL2
+	select BR2_PACKAGE_HOST_XA
+	select BR2_PACKAGE_SDL2_IMAGE
 	help
 	  vice
