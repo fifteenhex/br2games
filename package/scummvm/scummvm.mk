@@ -32,6 +32,24 @@ ifeq ($(BR2_PACKAGE_SCUMMVM_ENGINE_SCUMMV7V8),y)
 SCUMMVM_ENGINES := scumm-7-8
 endif
 
+SCUMMVM_CONFIG_OPTS =				\
+		--disable-cloud			\
+		--disable-lua			\
+		--disable-debug			\
+		--disable-mt32emu		\
+		--disable-nuked-opl		\
+		--disable-opengl-game		\
+		--disable-opengl-game-classic	\
+		--disable-opengl-game-shaders	\
+		--no-builtin-resources		\
+		--disable-all-engines		\
+		--enable-release
+
+
+ifeq ($(BR2_PACKAGE_SCUMMVM_DISABLE_SCALERS),y)
+SCUMMVM_CONFIG_OPTS += --disable-scalers
+endif
+
 define SCUMMVM_CONFIGURE_CMDS
 	cd $(@D) && CPPFLAGS="$(SCUMMVM_CFLAGS)" CFLAGS="$(SCUMMVM_CFLAGS)" PATH=$(HOST_DIR)/bin:$(PATH) \
 		PKG_CONFIG_LIBDIR=$(TARGET_DIR)/usr/lib/pkgconfig/	\
@@ -40,14 +58,7 @@ define SCUMMVM_CONFIGURE_CMDS
 		--prefix=/usr/						\
 		--backend=sdl						\
 		--host=arm-buildroot-linux-gnueabihf			\
-		--disable-cloud						\
-		--disable-lua						\
-		--disable-debug						\
-		--disable-mt32emu					\
-		--disable-nuked-opl					\
-		--no-builtin-resources					\
-		--disable-all-engines					\
-		--enable-release					\
+		$(SCUMMVM_CONFIG_OPTS)					\
 		--enable-engine-static=$(SCUMMVM_STATIC_ENGINES)	\
 		--enable-engine=$(SCUMMVM_ENGINES)
 endef
