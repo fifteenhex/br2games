@@ -5,6 +5,12 @@ config BR2_PACKAGE_SCUMMVM
 	help
 	  I likes me some monkey island
 
+config BR2_PACKAGE_SCUMMVM_DISABLE_SCALERS
+	bool "disable scalers"
+	depends on BR2_PACKAGE_SCUMMVM
+	help
+	  Disable scalers
+
 config BR2_PACKAGE_SCUMMVM_ENGINE_SCUMMV7V8
 	bool "scummvm v7/v8 suppport"
 	depends on BR2_PACKAGE_SCUMMVM
