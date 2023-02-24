@@ -42,6 +42,7 @@ SCUMMVM_CONFIG_OPTS =				\
 		--disable-opengl-game-classic	\
 		--disable-opengl-game-shaders	\
 		--no-builtin-resources		\
+		--disable-detection-full	\
 		--disable-all-engines		\
 		--enable-release
 
@@ -51,7 +52,10 @@ SCUMMVM_CONFIG_OPTS += --disable-scalers
 endif
 
 define SCUMMVM_CONFIGURE_CMDS
-	cd $(@D) && CPPFLAGS="$(SCUMMVM_CFLAGS)" CFLAGS="$(SCUMMVM_CFLAGS)" \
+	cd $(@D) && \
+		CXX="$(TARGET_CXX)" \
+		CPPFLAGS="$(SCUMMVM_CFLAGS)" \
+		CFLAGS="$(SCUMMVM_CFLAGS)" \
 		PATH=$(HOST_DIR)/bin:$(PATH) \
 		PKG_CONFIG_LIBDIR=$(TARGET_DIR)/usr/lib/pkgconfig/	\
 		./configure						\

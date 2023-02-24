@@ -1,0 +1,5 @@
+config BR2_PACKAGE_SAMNMAXDEMO
+	bool "Sam & Max Hit the Road demo"
+	depends on BR2_PACKAGE_SCUMMVM
+	help
+	  Demo version of Sam & Max Hit the Road for SCUMMVM
