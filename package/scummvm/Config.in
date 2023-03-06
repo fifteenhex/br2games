@@ -2,6 +2,8 @@ config BR2_PACKAGE_SCUMMVM
 	bool "scummvm"
 	depends on BR2_TOOLCHAIN_BUILDROOT_CXX
 	depends on BR2_PACKAGE_SDL || BR2_PACKAGE_SDL2
+	select BR2_PACKAGE_ALSA_LIB_HWDEP if BR2_PACKAGE_ALSA_LIB=y
+	select BR2_PACKAGE_ALSA_LIB_SEQ if BR2_PACKAGE_ALSA_LIB=y
 	help
 	  I likes me some monkey island
 
