@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-FAKE08_VERSION = 1f628aeaebbcf30de14bd4d14cadace4bdd8794c
+FAKE08_VERSION = aebd6b9648d1c450910ad79c78f9280dfbd20b25
 FAKE08_SITE = https://github.com/jtothebell/fake-08.git
 FAKE08_SITE_METHOD = git
 FAKE08_GIT_SUBMODULES = YES
