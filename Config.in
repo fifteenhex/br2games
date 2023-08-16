@@ -12,6 +12,7 @@ source "$BR2_EXTERNAL_GAMES_PATH/package/picodrive/Config.in"
 source "$BR2_EXTERNAL_GAMES_PATH/package/vice/Config.in"
 source "$BR2_EXTERNAL_GAMES_PATH/package/xa/Config.in"
 source "$BR2_EXTERNAL_GAMES_PATH/package/cdogssdl/Config.in"
+source "$BR2_EXTERNAL_GAMES_PATH/package/wipeout-rewrite/Config.in"
 
 # SCUMMVM
 source "$BR2_EXTERNAL_GAMES_PATH/package/scummvm/Config.in"
