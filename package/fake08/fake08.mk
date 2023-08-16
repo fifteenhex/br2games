@@ -4,8 +4,8 @@
 #
 ################################################################################
 
-FAKE08_VERSION = aebd6b9648d1c450910ad79c78f9280dfbd20b25
-FAKE08_SITE = https://github.com/jtothebell/fake-08.git
+FAKE08_VERSION = 5af9cb8a59c823a41c4195044ecfa7d03f123150
+FAKE08_SITE = git@github.com:fifteenhex/fake-08.git
 FAKE08_SITE_METHOD = git
 FAKE08_GIT_SUBMODULES = YES
 FAKE08_DEPENDENCIES = sdl2
