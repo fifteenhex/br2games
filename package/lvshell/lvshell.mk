@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-LVSHELL_VERSION = c631566a7ce6d0571a1ce46b09d8a6d99b4d950a
+LVSHELL_VERSION = 8d17020483f91c574d8fe36551381efe37f665db
 LVSHELL_SITE = https://github.com/fifteenhex/lvshell.git
 LVSHELL_SITE_METHOD = git
 LVSHELL_DEPENDENCIES = sdl2

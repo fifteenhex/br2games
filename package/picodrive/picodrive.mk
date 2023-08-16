@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PICODRIVE_VERSION = 3672cad8d0efecdf7a6502f93ee70adb7d91f677
+PICODRIVE_VERSION = 8bc53f3018f9e46290ab9adcbfd7a7870db07613
 PICODRIVE_SITE = https://github.com/notaz/picodrive.git
 PICODRIVE_SITE_METHOD = git
 PICODRIVE_GIT_SUBMODULES = YES

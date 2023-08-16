@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-CDOGSSDL_VERSION = 82a196d8f0d1a9563de61aa259ed51e52c90b4b2
+CDOGSSDL_VERSION = c71ba65059b265450b1951bf7305228f2bbd2bf3
 CDOGSSDL_SITE = https://github.com/cxong/cdogs-sdl.git
 CDOGSSDL_SITE_METHOD = git
 CDOGSSDL_DEPENDENCIES = sdl2 sdl2_image sdl2_mixer

@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-SCUMMVM_VERSION = 0541275c2761b450b2fc8c5ffbc6911b26f91394
+SCUMMVM_VERSION = a41ce23a9e48857100cd1bf21aa5d2a43d256d6a
 SCUMMVM_SITE = https://github.com/fifteenhex/scummvm.git
 SCUMMVM_SITE_METHOD = git
 SCUMMVM_LICENSE = GPL-3.0

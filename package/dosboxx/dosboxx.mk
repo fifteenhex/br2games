@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-DOSBOXX_VERSION = 504b33a498c980ffb2eb41b99e6464f935d779b8
+DOSBOXX_VERSION = 4327d58e75fe82829d594f2e43b32e7d7e78767c
 DOSBOXX_SITE = https://github.com/joncampbell123/dosbox-x.git
 DOSBOXX_SITE_METHOD = git
 DOSBOXX_LICENSE = gpl-2.0

@@ -1,3 +1,9 @@
+config BR2_GAMES_SHOWBORKED
+	bool "Show borken packages"
+	help
+	  Some packages are currently borken.
+	  Show them..
+
 source "$BR2_EXTERNAL_GAMES_PATH/package/bochs/Config.in"
 source "$BR2_EXTERNAL_GAMES_PATH/package/cppquake/Config.in"
 source "$BR2_EXTERNAL_GAMES_PATH/package/dosboxx/Config.in"

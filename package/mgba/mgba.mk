@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-MGBA_VERSION = 9cfa7120b186b125406a850d373d86e5be40a7bd
+MGBA_VERSION = f637b5b1e8f9759495463677532309e307baf157
 MGBA_SITE = https://github.com/mgba-emu/mgba.git
 MGBA_SITE_METHOD = git
 MGBA_DEPENDENCIES = sdl

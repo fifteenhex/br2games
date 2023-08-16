@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-HATARI_VERSION = 0b353ce12d8e78a812cb204682a20f2e260957a8
+HATARI_VERSION = d358048f9cc48efb0d71cdb8c4000faa187d9e22
 HATARI_SITE = https://github.com/hatari/hatari.git
 HATARI_SITE_METHOD = git
 HATARI_DEPENDENCIES = sdl2
