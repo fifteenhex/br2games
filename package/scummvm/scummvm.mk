@@ -11,6 +11,9 @@ SCUMMVM_LICENSE = GPL-3.0
 
 # ignore the -Os option, this is performance critical
 SCUMMVM_CFLAGS = $(TARGET_CFLAGS) -O3
+# scummvm's forbidden.h clashes with directfb.h (pulled in via SDL_syswm.h
+# once SDL2 has the DirectFB driver); disable the check.
+SCUMMVM_CFLAGS += -DFORBIDDEN_SYMBOL_ALLOW_ALL
 
 ifeq ($(BR2_GCC_ENABLE_LTO),y)
 SCUMMVM_CFLAGS += -flto
