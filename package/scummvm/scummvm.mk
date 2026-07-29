@@ -4,9 +4,9 @@
 #
 ################################################################################
 
-SCUMMVM_VERSION = a41ce23a9e48857100cd1bf21aa5d2a43d256d6a
-SCUMMVM_SITE = https://github.com/fifteenhex/scummvm.git
-SCUMMVM_SITE_METHOD = git
+SCUMMVM_VERSION = 2026.3.0
+SCUMMVM_SITE = https://github.com/scummvm/scummvm/archive/refs/tags
+SCUMMVM_SOURCE = v$(SCUMMVM_VERSION).tar.gz
 SCUMMVM_LICENSE = GPL-3.0
 
 # ignore the -Os option, this is performance critical
