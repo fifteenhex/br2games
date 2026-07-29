@@ -18,3 +18,10 @@ config BR2_PACKAGE_SCUMMVM_ENGINE_SCUMMV7V8
 	depends on BR2_PACKAGE_SCUMMVM
 	help
 	  Support for newer scumm games like Full Throttle.
+
+config BR2_PACKAGE_SCUMMVM_ENGINE_FREEWARE
+	bool "freeware game engines"
+	depends on BR2_PACKAGE_SCUMMVM
+	help
+	  Engines for the popular freeware games (Lure of the Temptress,
+	  Beneath a Steel Sky, Flight of the Amazon Queen, AGI/SCI, Dráscula).

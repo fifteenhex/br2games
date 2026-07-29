@@ -35,6 +35,12 @@ ifeq ($(BR2_PACKAGE_SCUMMVM_ENGINE_SCUMMV7V8),y)
 SCUMMVM_ENGINES := scumm-7-8
 endif
 
+# Engines behind the classic freeware games (Lure of the Temptress, Beneath a
+# Steel Sky, Flight of the Amazon Queen, AGI/SCI adventures, Dráscula).
+ifeq ($(BR2_PACKAGE_SCUMMVM_ENGINE_FREEWARE),y)
+SCUMMVM_ENGINES += lure sky queen agi sci drascula
+endif
+
 SCUMMVM_CONFIG_OPTS =				\
 		--disable-cloud			\
 		--disable-lua			\
@@ -68,7 +74,7 @@ define SCUMMVM_CONFIGURE_CMDS
 		--host=$(GNU_TARGET_NAME)				\
 		$(SCUMMVM_CONFIG_OPTS)					\
 		--enable-engine-static=$(SCUMMVM_STATIC_ENGINES)	\
-		--enable-engine=$(SCUMMVM_ENGINES)
+		--enable-engine=$(subst $(space),$(comma),$(SCUMMVM_ENGINES))
 endef
 
 define SCUMMVM_BUILD_CMDS
