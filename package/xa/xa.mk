@@ -4,10 +4,11 @@
 #
 ################################################################################
 
-XA_VERSION = 2.3.13
+XA_VERSION = 2.4.1
 XA_SITE = https://www.floodgap.com/retrotech/xa/dists
 XA_SOURCE = xa-$(XA_VERSION).tar.gz
-XA_LICENSE = gpl-2.0
+XA_LICENSE = GPL-2.0
+XA_LICENSE_FILES = COPYING
 
 define HOST_XA_BUILD_CMDS
 	$(MAKE) -C $(@D)
