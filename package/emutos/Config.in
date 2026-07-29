@@ -1,0 +1,9 @@
+config BR2_PACKAGE_EMUTOS
+	bool "emutos (TOS ROM for Hatari)"
+	depends on BR2_PACKAGE_HATARI
+	help
+	  EmuTOS is a free (GPL) replacement for the Atari TOS ROM. Installed
+	  as Hatari's default TOS image (/usr/share/hatari/tos.img) so Atari ST
+	  software can boot without a copyrighted ROM.
+
+	  https://emutos.sourceforge.io
