@@ -1,5 +1,9 @@
 config BR2_PACKAGE_MGBA
 	bool "mgba"
 	depends on BR2_PACKAGE_SDL2
+	select BR2_PACKAGE_ZLIB
+	select BR2_PACKAGE_LIBPNG
 	help
-	  mgba - Gameboy Advance Emulator
+	  mGBA - Game Boy Advance emulator.
+
+	  https://mgba.io
