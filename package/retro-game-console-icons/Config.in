@@ -1,0 +1,9 @@
+config BR2_PACKAGE_RETRO_GAME_CONSOLE_ICONS
+	bool "retro game console icons"
+	help
+	  System/console icons (NES, Mega Drive, Game Boy, ...) from the
+	  retro-game-console-icons project, downscaled to 128x128 and
+	  installed under /usr/share/console-icons as <system>.png. lvshell
+	  shows them on the per-system menu cards.
+
+	  https://github.com/KyleBing/retro-game-console-icons
