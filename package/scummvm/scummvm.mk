@@ -11,6 +11,9 @@ SCUMMVM_LICENSE = GPL-3.0
 
 # ignore the -Os option, this is performance critical
 SCUMMVM_CFLAGS = $(TARGET_CFLAGS) -O3
+# scummvm's forbidden.h clashes with directfb.h (pulled in via SDL_syswm.h
+# once SDL2 has the DirectFB driver); disable the check.
+SCUMMVM_CFLAGS += -DFORBIDDEN_SYMBOL_ALLOW_ALL
 
 ifeq ($(BR2_GCC_ENABLE_LTO),y)
 SCUMMVM_CFLAGS += -flto
@@ -30,6 +33,12 @@ SCUMMVM_STATIC_ENGINES := scumm
 
 ifeq ($(BR2_PACKAGE_SCUMMVM_ENGINE_SCUMMV7V8),y)
 SCUMMVM_ENGINES := scumm-7-8
+endif
+
+# Engines behind the classic freeware games (Lure of the Temptress, Beneath a
+# Steel Sky, Flight of the Amazon Queen, AGI/SCI adventures, Dráscula).
+ifeq ($(BR2_PACKAGE_SCUMMVM_ENGINE_FREEWARE),y)
+SCUMMVM_ENGINES += lure sky queen agi sci drascula
 endif
 
 SCUMMVM_CONFIG_OPTS =				\
@@ -65,7 +74,7 @@ define SCUMMVM_CONFIGURE_CMDS
 		--host=$(GNU_TARGET_NAME)				\
 		$(SCUMMVM_CONFIG_OPTS)					\
 		--enable-engine-static=$(SCUMMVM_STATIC_ENGINES)	\
-		--enable-engine=$(SCUMMVM_ENGINES)
+		--enable-engine=$(subst $(space),$(comma),$(SCUMMVM_ENGINES))
 endef
 
 define SCUMMVM_BUILD_CMDS
