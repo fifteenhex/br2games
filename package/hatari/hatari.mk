@@ -10,4 +10,8 @@ HATARI_SITE_METHOD = git
 HATARI_DEPENDENCIES = sdl2
 HATARI_LICENSE = GPL-2.0
 
+# Hatari's CMakeLists still declares an ancient cmake_minimum_required, which
+# modern CMake rejects; bump the policy floor.
+HATARI_CONF_OPTS = -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 $(eval $(cmake-package))
