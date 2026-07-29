@@ -1,0 +1,9 @@
+config BR2_PACKAGE_SCUMMVM_ICONS
+	bool "ScummVM game icons"
+	depends on BR2_PACKAGE_SCUMMVM
+	help
+	  Per-game cover icons from the scummvm-icons project, downscaled
+	  to 96x96 and installed under /usr/share/scummvm/icons. lvshell
+	  shows them next to each detected game.
+
+	  https://github.com/scummvm/scummvm-icons
