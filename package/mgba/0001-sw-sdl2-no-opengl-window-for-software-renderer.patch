@@ -1,0 +1,29 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Daniel's intern <intern@thingy.jp>
+Date: Wed, 29 Jul 2026 00:00:00 +0000
+Subject: [PATCH] sw-sdl2: don't request an OpenGL window for the software
+ renderer
+
+The SDL software renderer only ever uses SDL_Renderer / SDL_Texture; it
+never creates a GL context. Requesting SDL_WINDOW_OPENGL is therefore
+unnecessary. It is harmless on video drivers that expose OpenGL, but on a
+GL-less driver such as DirectFB2 (which dropped the GL module) it makes
+SDL_CreateWindow() fail outright - the emulator then keeps running with a
+NULL window/renderer and never shows a picture.
+
+Drop the flag so the software frontend gets a normal window and displays
+on GL-less targets.
+
+Signed-off-by: Daniel's intern <intern@thingy.jp>
+---
+--- a/src/platform/sdl/sw-sdl2.c	2026-07-29 09:26:51.713734118 +0000
++++ b/src/platform/sdl/sw-sdl2.c	2026-07-29 09:26:51.712671294 +0000
+@@ -22,7 +22,7 @@
+ bool mSDLSWInit(struct mSDLRenderer* renderer) {
+ 	unsigned width, height;
+ 	renderer->core->desiredVideoDimensions(renderer->core, &width, &height);
+-	renderer->window = SDL_CreateWindow(projectName, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, renderer->viewportWidth, renderer->viewportHeight, SDL_WINDOW_OPENGL | (SDL_WINDOW_FULLSCREEN_DESKTOP * renderer->player.fullscreen));
++	renderer->window = SDL_CreateWindow(projectName, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, renderer->viewportWidth, renderer->viewportHeight, (SDL_WINDOW_FULLSCREEN_DESKTOP * renderer->player.fullscreen));
+ 	SDL_GetWindowSize(renderer->window, &renderer->viewportWidth, &renderer->viewportHeight);
+ 	renderer->player.window = renderer->window;
+ 	renderer->sdlRenderer = SDL_CreateRenderer(renderer->window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
